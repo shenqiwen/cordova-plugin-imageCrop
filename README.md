@@ -1,4 +1,9 @@
-# cordova-plugin-imageCrop 使用方式(只支持Android)
+# cordova-plugin-imageCrop (只支持Android)
+### 使用方法
+
+
+
+### 使用时完成如下步骤
 #### Step 1.  (添加uCrop库所需的配置)
 插件添加完毕后 在路径\platforms\android\build.gradle里添加
 ```
