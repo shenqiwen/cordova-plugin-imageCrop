@@ -1,0 +1,57 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "C:\\Users\\Administrator\\Desktop\\imageCrop",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "C:\\Users\\Administrator\\Desktop\\imageCrop",
+        "spec": "C:\\Users\\Administrator\\Desktop\\imageCrop",
+        "type": "directory"
+      },
+      "C:\\Users\\Administrator\\Desktop\\ImageCrop_CordovaDemo\\node_modules"
+    ]
+  ],
+  "_from": "..\\imageCrop",
+  "_id": "yimPlugin@1.0.0",
+  "_inCache": true,
+  "_location": "/yimPlugin",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "C:\\Users\\Administrator\\Desktop\\imageCrop",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "C:\\Users\\Administrator\\Desktop\\imageCrop",
+    "spec": "C:\\Users\\Administrator\\Desktop\\imageCrop",
+    "type": "directory"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "file:..\\imageCrop",
+  "_shasum": "2afb716310d311458932738a10d78cacbcd7b438",
+  "_shrinkwrap": null,
+  "_spec": "C:\\Users\\Administrator\\Desktop\\imageCrop",
+  "_where": "C:\\Users\\Administrator\\Desktop\\ImageCrop_CordovaDemo\\node_modules",
+  "author": "",
+  "cordova": {
+    "id": "com.rsc.yim.plugin",
+    "platforms": [
+      "android"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "license": "ISC",
+  "name": "yimPlugin",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "version": "1.0.0"
+}

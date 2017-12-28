@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova.plugins.imageCrop" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android"><name>imageCrop</name><js-module name="imageCrop" src="www/imageCrop.js"><clobbers target="cordova.plugins.imageCrop" /></js-module>
+
+
+<platform name="android">
+    <config-file parent="/*" target="res/xml/config.xml">
+        <feature name="imageCrop">
+            <param name="android-package" value="com.rsc.imgcrop.imageCrop" />
+        </feature>
+    </config-file>
+    <!-- Java代码 -->
+    <source-file src="src/android/imageCrop.java" target-dir="src/com/rsc/imgcrop" />
+    
+    <!--  权限相关-->
+    <config-file parent="/manifest" target="AndroidManifest.xml">
+        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+        <uses-permission android:name="android.permission.INTERNET"/>
+    </config-file>
+    
+    <!-- application 内的 配置-->
+    <config-file parent="/manifest/application" target="AndroidManifest.xml">
+        <activity
+        android:name="com.yalantis.ucrop.UCropActivity"
+        android:screenOrientation="portrait"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+    </config-file>
+    <!-- 依赖库 -->
+    <framework src="com.github.yalantis:ucrop:2.2.1" />
+</platform>
+
+
+</plugin>
