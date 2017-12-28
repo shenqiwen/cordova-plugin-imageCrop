@@ -1,7 +1,14 @@
 # cordova-plugin-imageCrop (只支持Android)
 ### 使用方法
-
-
+```
+// 监听方法 回传截取后的图片路径
+cordova.plugins.imageCrop.addCallBackListener(null,function(e){console.log(e);},function(e){console.log(e);});
+// 截取图片
+ cordova.plugins.imageCrop.crop('需要截取的图片路径','截取的图片宽','高',function(e){alert(e);},function(e){console.log(e);});
+// 压缩图片 压缩质量 0-100
+ cordova.plugins.imageCrop.compress('需要压缩的图片路径','压缩质量',function(e){alert(e);},function(e){console.log(e);});
+ 
+```
 
 ### 使用时完成如下步骤
 #### Step 1.  (添加uCrop库所需的配置)
