@@ -1,7 +1,7 @@
 # cordova-plugin-imageCrop (只支持Android)
 ### 使用方法
 ```
-// 监听方法 回传截取后的图片路径
+// 监听方法 回传截取或压缩后的图片路径
 cordova.plugins.imageCrop.addCallBackListener(null,function(e){console.log(e);},function(e){console.log(e);});
 
 
