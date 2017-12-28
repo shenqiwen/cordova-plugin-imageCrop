@@ -5,8 +5,8 @@ maven { url "https://jitpack.io" }
 #### Step 2.  (添加代码)
 找到项目所属的MainActivity 此Activity是Cordova框架的入口
 路径为 \项目包名\MainActivity
-替换 :
-
+替换导包 :
+```
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -25,6 +25,7 @@ import java.io.FileOutputStream;
 import java.nio.channels.FileChannel;
 import java.util.Calendar;
 
+```
 添加代码:
 
     /**
@@ -89,4 +90,4 @@ import java.util.Calendar;
         public String getCropImagePath() {
             return cropImagePath;
         }
-}
+    }
