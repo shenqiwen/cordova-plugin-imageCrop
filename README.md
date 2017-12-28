@@ -1,7 +1,9 @@
-# cordova-plugin-imageCrop
+# cordova-plugin-imageCrop 使用方式
 #### Step 1.  (添加uCrop库所需的配置)
 插件添加完毕后 在路径\platforms\android\build.gradle里添加
+```
 maven { url "https://jitpack.io" }
+```
 #### Step 2.  (添加代码)
 找到项目所属的MainActivity 此Activity是Cordova框架的入口
 路径为 \项目包名\MainActivity
