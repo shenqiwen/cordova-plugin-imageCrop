@@ -1,11 +1,12 @@
 # cordova-plugin-imageCrop
-#### Step 1.  (Ìí¼ÓuCrop¿âËùĞèµÄÅäÖÃ)
-²å¼şÌí¼ÓÍê±Ïºó ÔÚÂ·¾¶\platforms\android\build.gradleÀïÌí¼Ó 
+#### Step 1.  (æ·»åŠ uCropåº“æ‰€éœ€çš„é…ç½®)
+æ’ä»¶æ·»åŠ å®Œæ¯•å åœ¨è·¯å¾„\platforms\android\build.gradleé‡Œæ·»åŠ 
 maven { url "https://jitpack.io" }
-#### Step 2.  (Ìí¼Ó´úÂë)
-ÕÒµ½ÏîÄ¿ËùÊôµÄMainActivity ´ËActivityÊÇCordova¿ò¼ÜµÄÈë¿Ú
-Â·¾¶Îª \ÏîÄ¿°üÃû\MainActivity
-Ìæ»» :
+#### Step 2.  (æ·»åŠ ä»£ç )
+æ‰¾åˆ°é¡¹ç›®æ‰€å±çš„MainActivity æ­¤Activityæ˜¯Cordovaæ¡†æ¶çš„å…¥å£
+è·¯å¾„ä¸º \é¡¹ç›®åŒ…å\MainActivity
+æ›¿æ¢ :
+
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -24,26 +25,26 @@ import java.io.FileOutputStream;
 import java.nio.channels.FileChannel;
 import java.util.Calendar;
 
-Ìí¼Ó´úÂë:
+æ·»åŠ ä»£ç :
 
-/**
-     * uCrop ¿ªÔ´¿â ¼ô²Ã½çÃæ ½á¹û »Øµ÷
+    /**
+     * uCrop å¼€æºåº“ å‰ªè£ç•Œé¢ ç»“æœ å›è°ƒ
      */
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
-            //²ÃÇĞ³É¹¦
+            //è£åˆ‡æˆåŠŸ
             if (requestCode == UCrop.REQUEST_CROP) {
                 Uri croppedFileUri = UCrop.getOutput(data);
           //      Log.i("SQW", "cropURI:"+croppedFileUri);
             //    Log.i("SQW", "croppath:"+croppedFileUri.getPath());
-                //»ñÈ¡ÏµÍ³Ä¬ÈÏµÄÏÂÔØÄ¿Â¼
+                //è·å–ç³»ç»Ÿé»˜è®¤çš„ä¸‹è½½ç›®å½•
                 String downloadsDirectoryPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();
-                // ½«Ê±¼ä´Á Óë×Ô¶¨ÒåÃû³Æ Æ´½Ó Îª ¼ôÇĞºóµÄÍ¼Æ¬ÎÄ¼şÃû³Æ
+                // å°†æ—¶é—´æˆ³ ä¸è‡ªå®šä¹‰åç§° æ‹¼æ¥ ä¸º å‰ªåˆ‡åçš„å›¾ç‰‡æ–‡ä»¶åç§°
                 String filename = String.format("%d_%s", Calendar.getInstance().getTimeInMillis(), croppedFileUri.getLastPathSegment());
                 File saveFile = new File(downloadsDirectoryPath, filename);
-                //±£´æÏÂÔØµÄÍ¼Æ¬
+                //ä¿å­˜ä¸‹è½½çš„å›¾ç‰‡
                 FileInputStream inStream = null;
                 FileOutputStream outStream = null;
                 FileChannel inChannel = null;
@@ -54,11 +55,9 @@ import java.util.Calendar;
                     inChannel = inStream.getChannel();
                     outChannel = outStream.getChannel();
                     inChannel.transferTo(0, inChannel.size(), outChannel);
-                    Toast.makeText(this, "²ÃÇĞºóµÄÍ¼Æ¬±£´æÔÚ£º" + saveFile.getAbsolutePath(), Toast.LENGTH_SHORT).show();
-                    Log.i("SQW", "²ÃÇĞºóµÄÍ¼Æ¬±£´æÔÚ£º"+saveFile.getAbsolutePath());
-
+                    Toast.makeText(this, "è£åˆ‡åçš„å›¾ç‰‡ä¿å­˜åœ¨ï¼š" + saveFile.getAbsolutePath(), Toast.LENGTH_SHORT).show();
+                    Log.i("SQW", "è£åˆ‡åçš„å›¾ç‰‡ä¿å­˜åœ¨ï¼š"+saveFile.getAbsolutePath());
                     EventBus.getDefault().post(new SendCropImagePathEvent(saveFile.getAbsolutePath()));
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {
@@ -73,16 +72,13 @@ import java.util.Calendar;
                 }
             }
         }
-
-        //²ÃÇĞÊ§°Ü
+        //è£åˆ‡å¤±è´¥
         if (resultCode == UCrop.RESULT_ERROR) {
-            Toast.makeText(this, "²ÃÇĞÍ¼Æ¬Ê§°Ü", Toast.LENGTH_SHORT).show();
-            Log.i("SQW", "²ÃÇĞÍ¼Æ¬Ê§°Ü");
+            Toast.makeText(this, "è£åˆ‡å›¾ç‰‡å¤±è´¥", Toast.LENGTH_SHORT).show();
+            Log.i("SQW", "è£åˆ‡å›¾ç‰‡å¤±è´¥");
        
         }
     }
-
-
     public class  SendCropImagePathEvent{
         private String cropImagePath;
 
